@@ -12,3 +12,16 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~X~~~~~~~~~~~~~~~~~~~~~~~
 // ```
+for (let row = 1; row <= 9; row++) {
+  let rowString = "";
+  for (let col = 1; col <= 30; col++) {
+    if ((col === 25 && row === 2) || (col === 7 && row === 9)) {
+      rowString += "X";
+    } else if ((col === 6 && row === 4) || (col === 18 && row === 7)) {
+      rowString += "0";
+    } else {
+      rowString += "~";
+    }
+  }
+  console.log(rowString);
+}
