@@ -8,9 +8,22 @@
    - otherwise, the value is preserved.
 */
 
-function fizzBuzz(list) {
-
+function modify(value) {
+  let result = value;
+  if (value % 3 === 0 && value % 5 === 0) {
+    result = "FizzBuzz";
+  } else if (value % 3 === 0) {
+    result = "Fizz";
+  } else if (value % 5 === 0) {
+    result = "Buzz";
+  } else {
+    result = value;
+  }
+  return result;
 }
 
+function fizzBuzz(list) {
+  return list.map(modify);
+}
 
 module.exports = fizzBuzz;

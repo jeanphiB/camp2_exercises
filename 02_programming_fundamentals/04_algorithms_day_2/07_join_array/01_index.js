@@ -4,6 +4,13 @@
 //
 // eg: join(["zero", "one", "two"], "-") => "zero - one - two"
 
+function joinArray(array, separator) {
+  return array.reduce(join);
+
+  function join(accumulator, currentValue) {
+    return accumulator + separator + currentValue;
+  }
+}
 
 // ⚠ Do not remove me ! It's for tests
 // eslint-disable-next-line

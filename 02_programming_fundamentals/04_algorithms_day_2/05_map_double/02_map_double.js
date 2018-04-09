@@ -11,6 +11,17 @@
 // WARNING: You're not allowed to use `Array.map`!
 
 // Your code here...
+function double(value) {
+  return value * 2;
+}
+
+function map(array, fn) {
+  let newArray = [];
+  for(let i = 0; i < array.length; i++) {
+    newArray.push(fn(array[i]));
+  }
+  return newArray;
+}
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line

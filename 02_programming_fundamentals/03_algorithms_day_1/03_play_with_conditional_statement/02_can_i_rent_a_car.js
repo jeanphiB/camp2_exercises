@@ -22,12 +22,12 @@ if (driverLicense >= "B") {
 } else {
   canRentACar = false;
 }
-if (canRentACar && licenseIssued > 2) {
+if (canRentACar && licenseIssued < 2016) {
   canRentACar = true;
 } else {
   canRentACar = false;
 }
-if (canRentACar && (numberOfAccident === 0 || bonus <= 0.7)) {
+if (canRentACar && (numberOfAccident === 0 || bonus >= 0.7)) {
   canRentACar = true;
 } else {
   canRentACar = false;
