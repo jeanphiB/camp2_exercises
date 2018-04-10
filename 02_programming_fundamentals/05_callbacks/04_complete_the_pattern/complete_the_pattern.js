@@ -32,9 +32,20 @@
 // 10101010101010101010
 // 1111111111111111111111
 // ```
+function stringOfSize(size) {
+  let result = "";
+  for(let i = 1; i <= size; i++) {
+    result += size.toString();
+  }
+  return result;
+}
 
 function pattern(size) {
-  // Your code here
+  let result = "";
+  for(let i = 1; i <= size; i++) {
+    result += stringOfSize(i) + "\n";
+  }
+  return result.trim();
 }
 
 // Do not remove last lines, it is for tests

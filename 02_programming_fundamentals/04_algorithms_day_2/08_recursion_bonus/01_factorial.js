@@ -9,8 +9,19 @@
 
 function fact(n) {
   // your code here
+  if (n === 0) {
+    return 1;
+  } else if (n > 0) {
+    let prevN = fact(n-1);
+    if (prevN === null)
+      return n;
+    else
+      return n * prevN;
+  }
+  return null;
 }
 
+//console.log(fact(1));
 
 // do not remove this line, it is for tests
 module.exports = fact;

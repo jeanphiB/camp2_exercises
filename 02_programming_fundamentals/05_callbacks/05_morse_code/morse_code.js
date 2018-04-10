@@ -45,8 +45,14 @@ const MORSE_CODE = {
 };
 
 function decodeMorse(morse) {
-  // Your code here
+  return morse
+    .split(" ")
+    .map((value) => (value === "") ? " " : MORSE_CODE[value])
+    .join("")
+    .replace(/\s\s/g, " ");
 }
+
+console.log(decodeMorse(".... . -.--   .--- ..- -.. ."));
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
