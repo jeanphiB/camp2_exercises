@@ -5,7 +5,11 @@
 // for instance pow(2,8) = 256
 
 function pow(number, power) {
-  // Your code here
+  if (power === 0) {
+    return 1;
+  } else {
+    return number * pow(number, power - 1);
+  }
 }
 
 // do not remove this line, it is for tests

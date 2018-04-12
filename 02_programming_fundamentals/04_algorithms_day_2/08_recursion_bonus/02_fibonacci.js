@@ -12,20 +12,20 @@
 //
 // Remember that you can call `fibo` inside of itself
 // even several times
-let current = 0;
 
-function fibo(n) {
-  result = null;
-  if (n === 0) {
-    result = 0;
-  } else if (n > 0) {
-    result = fibo(n - 1) + n;
-    console.log(`n=${n} - result=${result}`);
+function fibo(value) {
+  if (typeof value === "string") {
+    return null;
+  } else if (value < 0) {
+    return null;
+  } else if (value === 0) {
+    return 0;
+  } else if (value === 1) {
+    return 1;
+  } else {
+    return fibo(value - 2) + fibo(value - 1);
   }
-  return result;
 }
-
-console.log(fibo(8));
 
 // do not remove this line, it is for tests
 module.exports = fibo;
