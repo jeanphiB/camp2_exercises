@@ -55,6 +55,77 @@ function fetchCommentsByPost(postId, callback) {
   fetch("comments", callback, `postId=${postId}`);
 }
 
+function publishPost(userId, title, body, callback) {
+  const queryUrl = `${mainUrl}/posts`;
+
+  request(
+    {
+      url: queryUrl,
+      method: "POST",
+      form: {
+        userId: userId,
+        title: title,
+        body: body
+      }
+    },
+    function(error, response, result) {
+      callback(result);
+    }
+  );
+}
+
+function publishComment(postId, name, email, body, callback){
+  const queryUrl = `${mainUrl}/comments`;
+
+  request(
+    {
+      url: queryUrl,
+      method: "POST",
+      form: {
+        postId: postId,
+        name: name,
+        email: email,
+        body: body
+      }
+    },
+    function(error, response, result) {
+      callback(result);
+    }
+  );
+}
+
+function updatePost(postId, newTitle, newBody, callback) {
+  const queryUrl = `${mainUrl}/posts/${postId}`;
+  let form = {
+//    postId: postId
+  };
+  if (newTitle !== undefined) {
+    form.title = newTitle;
+  }
+  if (newBody !== undefined) {
+    form.body = newBody;
+  }
+
+  request(
+    {
+      url: queryUrl,
+      method: "PATCH",
+      form: form
+    },
+    function(error, response, result) {
+      callback(result);
+    }
+  );
+}
+
+function updatePostTitle(postId, newTitle, callback) {
+  updatePost(postId, newTitle, undefined, callback);
+}
+
+function updatePostBody(postId, newBody, callback) {
+  updatePost(postId, undefined, newBody, callback);
+}
+
 module.exports = {
   fetchPosts: fetchPosts,
   fetchPostByUser: fetchPostByUser,
@@ -63,7 +134,12 @@ module.exports = {
   fetchUser: fetchUser,
   fetchComments: fetchComments,
   fetchComment: fetchComment,
-  fetchCommentsByPost: fetchCommentsByPost
+  fetchCommentsByPost: fetchCommentsByPost,
+  publishPost: publishPost,
+  publishComment: publishComment,
+  updatePostTitle: updatePostTitle,
+  updatePostBody: updatePostBody,
+  updatePost: updatePost
 };
 
 // function logFunction(result) {
@@ -74,3 +150,4 @@ module.exports = {
 //fetchPostByUser(1, logFunction);
 //fetchPost(1, logFunction);
 //fetchUsers(logFunction);
+//updatePost(1, "newTitle", "newBody", logFunction);
