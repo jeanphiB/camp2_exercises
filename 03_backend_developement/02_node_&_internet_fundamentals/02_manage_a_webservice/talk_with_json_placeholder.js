@@ -96,9 +96,7 @@ function publishComment(postId, name, email, body, callback){
 
 function updatePost(postId, newTitle, newBody, callback) {
   const queryUrl = `${mainUrl}/posts/${postId}`;
-  let form = {
-//    postId: postId
-  };
+  const form = {};
   if (newTitle !== undefined) {
     form.title = newTitle;
   }

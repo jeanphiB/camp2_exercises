@@ -15,14 +15,12 @@ function simpleGet(callback){
 function simpleGetWithParams(callback){
   request(
     {
-/*
-      url: "https://postman-echo.com/get",
-      form: {
-        foo: "bar",
-        program: "camp2",
-        people: ["Frieda", "Francis"]
-      },
-*/
+      // url: "https://postman-echo.com/get",
+      // form: {
+      //   foo: "bar",
+      //   program: "camp2",
+      //   people: ["Frieda", "Francis"]
+      // },
       url: "https://postman-echo.com/get?foo=bar&program=camp2&people[0]=Frieda&people[1]=Francis",
       method: "GET"
     },
