@@ -3,7 +3,7 @@ const request = require("request");
 function simpleGet(callback){
   request(
     {
-      url: "https://postman-echo.com/get",
+      url: "https://postman-echo.com",
       method: "GET"
     },
     function(error, response, result) {
@@ -15,12 +15,6 @@ function simpleGet(callback){
 function simpleGetWithParams(callback){
   request(
     {
-      // url: "https://postman-echo.com/get",
-      // form: {
-      //   foo: "bar",
-      //   program: "camp2",
-      //   people: ["Frieda", "Francis"]
-      // },
       url: "https://postman-echo.com/get?foo=bar&program=camp2&people[0]=Frieda&people[1]=Francis",
       method: "GET"
     },
@@ -61,10 +55,9 @@ module.exports = {
   validateTimestamp: validateTimestamp
 };
 
-/*
 function logFunction(result) {
   console.log(result);
 }
 
-simpleGetWithParams(logFunction);
-*/
+simpleGet(logFunction);
+//simpleGetWithParams(logFunction);
