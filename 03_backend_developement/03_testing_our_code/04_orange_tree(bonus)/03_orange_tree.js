@@ -43,7 +43,6 @@ const orangeTree = {
   pickAnOrange: function() {
     if (this.oranges > 0) {
       this.oranges--;
-
       return true;
     } else {
       return false;

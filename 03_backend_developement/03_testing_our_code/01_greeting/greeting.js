@@ -1,7 +1,7 @@
 function greet(name) {
   let greetingName = name;
 
-  if (!name) {
+  if (name === undefined) {
     greetingName = "World";
   }
 

@@ -1,5 +1,10 @@
 function toWords(sentence) {
-  const allWords = sentence.split(/[.?!, :]+/);
+  let allWords;
+  if (!sentence) {
+    allWords = [""];
+  } else {
+    allWords = sentence.split(/[.?!, :]+/);
+  }
 
   return allWords.filter(word => word !== "");
 }
