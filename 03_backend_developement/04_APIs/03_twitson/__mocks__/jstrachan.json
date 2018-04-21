@@ -1,0 +1,25 @@
+{
+  "usage": {
+    "text_units": 1,
+    "text_characters": 59,
+    "features": 2
+  },
+  "sentiment": {
+    "document": {
+      "score": 0.0,
+      "label": "neutral"
+    }
+  },
+  "language": "en",
+  "emotion": {
+    "document": {
+      "emotion": {
+        "sadness": 0.288492,
+        "joy": 0.327776,
+        "fear": 0.077119,
+        "disgust": 0.320337,
+        "anger": 0.055502
+      }
+    }
+  }
+}
