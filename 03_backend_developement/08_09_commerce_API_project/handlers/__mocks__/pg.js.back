@@ -1,0 +1,15 @@
+const Client = {
+  connect : function() {
+
+  },
+
+  query : function() {
+
+  },
+
+  end: function() {
+
+  }
+};
+
+module.exports = Client;
