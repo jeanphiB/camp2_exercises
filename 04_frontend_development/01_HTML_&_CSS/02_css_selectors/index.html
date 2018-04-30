@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>Welcome Page</title>
+    <style>
+      tr:nth-child(even) {
+        background: #CCC;
+      }
+      tr:nth-child(odd) {
+        background: #FFF;
+      }
+      .important {
+        font-weight: bold;
+      }
+      .emphasis {
+        font-style: italic;
+      }
+      .emphasis.important {
+        font-style: italic;
+        color: #F00;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exercice 02 css selector</h1>
+    <table>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>Jean-Philippe</td>
+        <td>Bornier</td>
+        <td>53</td>
+      </tr>
+    </table>
+    <p>Lorem ipsum dolor sit amet, <span class="important">consectetur adipiscing elit</span>.<br />
+      Nulla tincidunt ut eros eu aliquam. <span class="emphasis">Aenean bibendum massa vitae tortor tempus</span>, a commodo leo congue.<br />
+      Nulla magna dolor, <span class="important emphasis">mollis vitae libero quis, commodo venenatis lectus.</span><br />
+      In pellentesque est sit amet metus convallis, accumsan gravida risus faucibus.</p>
+  </body>
+</html>
