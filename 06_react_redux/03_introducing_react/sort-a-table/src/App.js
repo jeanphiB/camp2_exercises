@@ -20,19 +20,57 @@ const products = [
 ];
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      key: undefined,
+      order: "asc"
+    }
+  }
+
+  onClickHeader(key) {
+    if (this.state.key !== key) {
+      this.state.key = key;
+      this.state.order = "asc";
+    } else {
+      this.state.order = (this.state.order === "asc") ? "desc" : "asc";
+    }
+    this.setState({key: this.state.key, order: this.state.order});
+  };
+
+  renderHeaderRow(product) {
+    const tableHeader = Object.keys(product).map((value) => {
+      return <th onClick={() => this.onClickHeader(value)} key={value}>{value}</th>
+    });
+    return <tr>{tableHeader}</tr>;
+  }
+
+  renderRow(products) {
+    let sortedProducts = _.sortBy(products, this.state.key);
+    if (this.state.order === "desc") {
+      sortedProducts = sortedProducts.reverse();
+    }
+
+    let rows = sortedProducts.map((row, rowIndex) => {
+      const keys = Object.keys(row);
+      let htmlRow = Object.values(row).map((data, index) => {
+        const key = [keys[index], rowIndex].join("_");
+        return <td key={key} id={key}>{data}</td>;
+      });
+      return <tr key={rowIndex} id={rowIndex}>{htmlRow}</tr>;
+    });
+    return rows;
+  }
+
   render() {
     return (
       <div className="App">
         <table>
-          <thead>
-            <th>decathlon_id</th>
-            <th>title</th>
-            <th>price</th>
-          </thead>
-          <tr>
-            <td>
-            </td>
-          </tr>
+          <tbody>
+            {this.renderHeaderRow(products[0])}
+            {this.renderRow(products)}
+          </tbody>
         </table>
       </div>
     );
