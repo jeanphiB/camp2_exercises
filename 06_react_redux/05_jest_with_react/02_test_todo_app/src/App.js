@@ -32,7 +32,6 @@ class App extends Component {
 
   deleteTask(taskId) {
     const newTasks = this.state.tasks.filter(task => task.id !== taskId);
-    console.log(newTasks)
     this.setState({tasks: newTasks});
   }
 

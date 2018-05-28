@@ -4,16 +4,30 @@ class Book extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      book: null
+      book: null,
+      isbn: null
     }
   }
-  componentDidMount() {
+
+  findBook() {
     fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.isbn}8&format=json&jscmd=data`)
       .then(response => response.json())
       .then(bookData => {
-        this.setState({book: Object.values(bookData)[0]})
+        console.log(bookData);
+        this.setState({book: Object.values(bookData)[0], isbn: this.props.isbn});
       })
   }
+
+  componentDidMount() {
+    this.findBook();
+  }
+
+  componentDidUpdate() {
+    if (this.props.isbn && this.props.isbn !== this.state.isbn) {
+      this.findBook();
+    }
+  }
+
   render() {
     return (
       <div>

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App display task input 1`] = `
+<div
+  className="game"
+>
+  <div
+    className="game-board"
+  >
+    <div>
+      <div
+        className="board-row"
+      >
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+      </div>
+      <div
+        className="board-row"
+      >
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+      </div>
+      <div
+        className="board-row"
+      >
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+        <button
+          className="square"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="game-info"
+  >
+    <div>
+      Next player: X
+    </div>
+  </div>
+</div>
+`;

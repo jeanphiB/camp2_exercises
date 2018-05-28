@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 function findUser(users, id) {
-  let userFound;
-  users.forEach(user => {
-    if (user.id === id) {
-      userFound = user;
-    }
-  });
+  const userFound = users.find((user) => { return user.id === id});
   return (userFound) ? userFound.name : "No one";
 }
 
